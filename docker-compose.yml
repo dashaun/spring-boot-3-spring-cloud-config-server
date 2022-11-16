@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  spring-cloud-config:
+    image: "dashaun/config-service:0.0.0"
+    ports:
+      - target: 8888
+        published: 8888
+        protocol: tcp
+        mode: host
+    environment:
+      SPRING_CLOUD_CONFIG_SERVER_GIT_URI: https://github.com/dashaun/dev.dashaun.config
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
