@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   spring-cloud-config:
-    image: "dashaun/config-service:0.0.0"
+    image: "dashaun/config-service:0.0.1"
     ports:
       - target: 8888
         published: 8888
